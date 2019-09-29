@@ -65,7 +65,7 @@ extension Notification {
         #if swift(>=4.2)
         let frameKey = UIResponder.keyboardFrameEndUserInfoKey
         #else
-        let frameKey = UIKeyboardFrameEndUserInfoKey
+        let frameKey = UIResponder.keyboardFrameEndUserInfoKey
         #endif
         
         return (self.userInfo?[frameKey] as? NSValue)?.cgRectValue
@@ -76,7 +76,7 @@ extension Notification {
         #if swift(>=4.2)
         let durationKey = UIResponder.keyboardAnimationDurationUserInfoKey
         #else
-        let durationKey = UIKeyboardAnimationDurationUserInfoKey
+        let durationKey = UIResponder.keyboardAnimationDurationUserInfoKey
         #endif
 
         return (self.userInfo?[durationKey] as? NSNumber)?.doubleValue
